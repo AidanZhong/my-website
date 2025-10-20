@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -11,27 +11,26 @@ import Sports from "./pages/Sports";
 import WorkExperiences from "./pages/WorkExperience.jsx";
 
 function App() {
-    return (<Router>
+    return (
         <div className="flex flex-col min-h-screen">
-            <Navbar/>
+            <Navbar />
             <main className="flex-grow">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <Routes>
-                        <Route path='/' element={<Home/>}/>
-                        <Route path='/about' element={<About/>}/>
-                        <Route path='/work_experiences' element={<WorkExperiences/>}/>
-                        <Route path='/education' element={<Education/>}/>
-                        <Route path='/research_and_projects' element={<ResearchAndProjects/>}/>
-                        <Route path='/sports' element={<Sports/>}/>
-                        <Route path='/Enturepreneurship' element={<Entrepreneurship/>}/>
-                        <Route path='/leetcode' element={<LeetCode/>}/>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/work_experiences" element={<WorkExperiences />} />
+                        <Route path="/education" element={<Education />} />
+                        <Route path="/research_and_projects" element={<ResearchAndProjects />} />
+                        <Route path="/sports" element={<Sports />} />
+                        <Route path="/Enturepreneurship" element={<Entrepreneurship />} />
+                        <Route path="/leetcode" element={<LeetCode />} />
                     </Routes>
                 </div>
             </main>
-            <Footer/>
+            <Footer />
         </div>
-    </Router>);
+    );
 }
 
 export default App;
-
