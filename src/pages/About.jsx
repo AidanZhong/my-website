@@ -3,23 +3,29 @@ import profilePic from "../assets/tri_pic.jpg";
 
 export default function About() {
     return (<div className="relative min-h-screen bg-gray-950 text-gray-100 overflow-hidden">
-        {/* Background Image with overlay */}
-        <div className="aboslute inset-0">
-            <motion.img
-                src={profilePic}
-                alt="Aidan Zhong"
-                className="w-full h-full object-cover opacity-40"
-                initial={{scale: 1.1, opacity: 0}}
-                animate={{scale: 1, opacity: 0.4}}
-                transition={{duration: 1.5, ease: "easeOut"}}
+        <motion.div
+            className="absolute inset-0"
+            initial={{opacity: 0, scale: 1.05}}
+            animate={{opacity: 1, scale: 1}}
+            transition={{duration: 1.5, ease: "easeOut"}}
+        >
+            <div
+                className="w-full h-full bg-cover bg-center"
+                style={{
+                    backgroundImage: `url(${profilePic})`,
+                    backgroundColor: "#1f2937", // Tailwind gray-800
+                    backgroundBlendMode: "overlay",
+                }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-950/90"/>
-        </div>
+            {/* Gradient overlay for readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-gray-900/70 to-gray-950/80"/>
+        </motion.div>
+
         {/* Main Content */}
         <div className="relative max-w-5xl mx-auto px-6 py-24">
             <motion.h1
                 className="text-5xl font-extrabold mb-8 text-white"
-                initial={{opacity: 0, y: -20}}
+                initial={{opacity: 0, y: 20}}
                 animate={{opacity: 1, y: 0}}
                 transition={{duration: 1, ease: "easeOut"}}
             >
@@ -51,8 +57,7 @@ export default function About() {
                 </p>
                 <p>
                     Outside of tech, I’m a <strong>triathlete and long-distance runner</strong>, driven by
-                    discipline, endurance, and continuous improvement. I also founded
-                    <strong> GoalBet</strong> trying to help people achieve their goals and chase their dreams.
+                    discipline, endurance, and continuous improvement.
                 </p>
 
                 <p>
